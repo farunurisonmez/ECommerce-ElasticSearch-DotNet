@@ -1,4 +1,7 @@
+
+
 # E-Commerce Web Application
+![E-Commerce Web Application](https://github.com/farunurisonmez/ECommerce-ElasticSearch-DotNet/blob/dev/v1.0.0/Assets/ECommerceWEB.PNG)
 
 Bu proje, bir e-ticaret web uygulaması geliştirmek için tasarlanmıştır. Proje, ürünlerin aranabilirliği, kullanıcı arayüzü ve veri yönetimi üzerine odaklanmaktadır.
 

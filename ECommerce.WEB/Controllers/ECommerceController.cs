@@ -6,18 +6,21 @@ namespace ECommerce.WEB.Controllers
 {
     public class ECommerceController : Controller
     {
-        private readonly ECommerceService service1;
+        private readonly ECommerceService _service;
 
         public ECommerceController(ECommerceService service) {
-            service1 = service;
+            _service = service;
         }
 
         public async Task<IActionResult> Search([FromQuery] SearchPageViewModel searchPageView)
         {
-            var (eCommerceList, totalCount, pageLinkCount) = await service1.SearchAsync(
-                searchPageView.SearchViewModel,
-                searchPageView.Page,
-                searchPageView.PageSize);
+            var (eCommerceList, totalCount, pageLinkCount) = await _service.SearchAsync(searchPageView.SearchViewModel, searchPageView.Page,
+                  searchPageView.PageSize);
+
+
+            searchPageView.List = eCommerceList;
+            searchPageView.TotalCount = totalCount;
+            searchPageView.PageLinkCount = pageLinkCount;
 
             return View(searchPageView);
         }

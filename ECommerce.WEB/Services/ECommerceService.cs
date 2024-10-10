@@ -16,13 +16,31 @@ namespace ECommerce.WEB.Services
         {
             var (eCommerceList, totalCount) = await _repository.SearchAsync(searchModel, page, pageSize);
 
-            var pageLinkCountCalc = totalCount % pageSize;
-            long pageLinkCount = pageLinkCountCalc == 0 ? totalCount / pageSize : (totalCount / pageSize) + 1;
+            var pageLinkCountCalculate = totalCount % pageSize;
+
+            long pageLinkCount = 0;
+
+            if (pageLinkCountCalculate == 0)
+            {
+                pageLinkCount = totalCount / pageSize;
+            }
+            else
+            {
+                pageLinkCount = (totalCount / pageSize) + 1;
+
+            }
 
             var eCommerceListViewModel = eCommerceList.Select(x => new ECommerceViewModel()
             {
                 Id = x.Id,
                 Category = String.Join(",",x.Category),
+                CustomerFullName = x.CustomerFullName,
+                CustomerFirstName = x.CustomerFirstName,
+                CustomerLastName = x.CustomerLastName,
+                OrderDate = x.OrderDate.ToShortDateString(),
+                Gender = x.Gender.ToLower(),
+                OrderId = x.OrderId,
+                TaxfulTotalPrice = x.TaxfulTotalPrice
 
             }).ToList();
 

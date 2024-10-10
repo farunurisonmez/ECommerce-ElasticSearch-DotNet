@@ -1,10 +1,16 @@
 using ECommerce.WEB.Extensions;
+using ECommerce.WEB.Repositories;
+using ECommerce.WEB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddElastic(builder.Configuration); // 
+
+builder.Services.AddScoped<ECommerceRepository>();
+builder.Services.AddScoped<ECommerceService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

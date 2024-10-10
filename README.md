@@ -1,6 +1,3 @@
-Elbette! İşte projeniz için teknik detayları içeren bir README dosyası taslağı:
-
-```markdown
 # E-Commerce Web Application
 
 Bu proje, bir e-ticaret web uygulaması geliştirmek için tasarlanmıştır. Proje, ürünlerin aranabilirliği, kullanıcı arayüzü ve veri yönetimi üzerine odaklanmaktadır.
@@ -63,6 +60,3 @@ Bu proje, bir e-ticaret web uygulaması geliştirmek için tasarlanmıştır. Pr
 ## Lisans
 
 Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
-```
-
-Bu README dosyası, projenizin yapı taşlarını ve nasıl çalıştığını net bir şekilde özetlemektedir. İhtiyacınıza göre detayları ve açıklamaları değiştirebilirsiniz.
